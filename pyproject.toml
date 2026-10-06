@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-triager"
+version = "0.1.0"
+description = "LLM-driven GitHub issue triage: claims, reproducers, writeups, review and a Panel app"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+agent = ["pydantic-ai-slim[anthropic,openai,google]>=2.54"]
+decisions = ["typesafe-sdk>=0.7"]
+docs = ["zensical"]
+app = ["panel>=1.8", "panel-material-ui>=0.16", "panel-splitjs", "pydantic-ai-slim[anthropic,openai,google]>=2.54"]
+
+[project.scripts]
+ai-triager = "ai_triager.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ai_triager"]

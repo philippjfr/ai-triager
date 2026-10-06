@@ -1,0 +1,79 @@
+# Triage workspace for {{repo}}. See ai_triager/config.py for every option.
+
+[project]
+name = "{{name}}"
+repo = "{{repo}}"
+# Local clone the agents read and run reproducers against. Never modified by the harness.
+checkout = "{{checkout}}"
+# Interpreter that runs reproducers (`triage run`). Empty means the interpreter running triage.
+python = "{{python}}"
+# Versions recorded in `tested_on`; the first one also gets the checkout commit.
+packages = ["{{package}}"]
+claim_ttl_hours = 3
+
+[repro]
+timeout = 120
+# Optional browser harness for `triage browse`, see the Panel workspace for an example.
+# browse_harness = "harness/browse.py"
+
+# Optional extra frontmatter fields, e.g.
+# [fields]
+# platform = { type = "enum", values = ["linux", "macos", "windows", "any"], default = "any" }
+
+# Categories default to the generic set in ai_triager/config.py; list them here to customize:
+# [[categories]]
+# name = "fixed"
+# description = "No longer reproduces on main, or the requested change exists"
+
+# Agent skills (directories with a SKILL.md) offered to the built-in runner, loaded on demand.
+# A path is a skill directory or a directory of skills; `disabled` lists skill names to hide.
+[skills]
+paths = {{skills}}
+disabled = []
+
+# Label review: probability thresholds for decision models and labels the reviewer should ignore.
+[labels]
+add_threshold = 0.75
+remove_threshold = 0.25
+exclude = []
+
+# First-pass PR review: template and policy checks plus decision-model questions.
+[prs]
+policy = "prs/policy.md"   # contribution / AI policy descriptions are checked against
+template = ""              # empty: the repository's (or organisation's) pull_request_template.md
+max_open = 2               # open PRs per author across the organisation
+threshold = 0.5
+trusted = ["OWNER", "MEMBER", "COLLABORATOR"]
+
+# Where agent shells and reproducers run. Issue text is untrusted, so keep the sandbox on.
+[sandbox]
+network = false            # backend defaults to seatbelt on macOS, else docker; "local" disables isolation
+
+[sandbox.guard]
+enabled = true
+model = "jev:jev-latest"
+min_safe = 0.5
+max_risk = 0.7
+
+# Rules: `validate` (default) checks finished writeups, `scaffold` sets fields on new ones,
+# `context` adds hints to detected components. See the Panel workspace for component rules.
+# [[rules]]
+# when = { category = "duplicate" }
+# require = ["duplicate_of"]
+# message = "duplicate requires `duplicate_of`"
+
+[agents]
+runner = "builtin"
+triage_model = "anthropic:claude-haiku-4-5"
+review_model = "anthropic:claude-sonnet-5-5"
+chat_model = "openrouter:openai/gpt-6-luna"
+models = ["anthropic:claude-haiku-4-5", "anthropic:claude-sonnet-5-5", "anthropic:claude-opus-5-5",
+          "openrouter:openai/gpt-6-luna"]
+
+[agents.modes.triage]
+steps = 150
+write_paths = ["issues/*.md", "repros/*", "NOTES.md"]
+
+[agents.modes.review]
+steps = 200
+write_paths = ["issues/*.md", "repros/*", "NOTES.md", "AGENTS.md"]

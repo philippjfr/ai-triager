@@ -1,0 +1,75 @@
+[project]
+site_name = "ai-triager"
+site_description = "LLM-assisted triage of GitHub issues, labels and pull requests for open-source maintainers."
+site_author = "Philipp Rudiger"
+docs_dir = "docs"
+nav = [
+  { "Home" = "index.md" },
+  { "Getting started" = "getting-started.md" },
+  { "Workspaces" = "workspaces.md" },
+  { "Models and keys" = "models.md" },
+  { "Running agents" = "running-agents.md" },
+  { "Sandbox and guard" = "security.md" },
+  { "The app" = "app.md" },
+  { "Label review" = "labels.md" },
+  { "PR review" = "pr-review.md" },
+  { "Configuration reference" = "configuration.md" },
+  { "CLI reference" = "cli.md" },
+]
+
+[project.theme]
+logo = "assets/logo.svg"
+favicon = "assets/favicon.svg"
+features = [
+  "content.code.copy",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.instant",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "search.suggest",
+  "toc.follow",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "teal"
+accent = "amber"
+
+[project.theme.palette.toggle]
+icon = "material/brightness-7"
+name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "teal"
+accent = "amber"
+
+[project.theme.palette.toggle]
+icon = "material/brightness-4"
+name = "Switch to light mode"
+
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.markdown_extensions.admonition]
+
+[project.markdown_extensions.pymdownx.details]
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+
+[project.markdown_extensions.pymdownx.inlinehilite]
+
+[project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[project.markdown_extensions.attr_list]
+
+[project.plugins]
+search = {}

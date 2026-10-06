@@ -1,0 +1,4 @@
+# Machine state: issue list, caches, claims, jobs and agent transcripts.
+.triage/
+*.tmp
+__pycache__/
