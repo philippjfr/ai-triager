@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ai-triager">
+  <path d="M14 8h36a8 8 0 0 1 8 8v24a8 8 0 0 1-8 8H30l-12 10v-10h-4a8 8 0 0 1-8-8V16a8 8 0 0 1 8-8z" fill="#ffffff"/>
+  <path d="M21 28.5l7.5 7.5L44 20.5" fill="none" stroke="#14866f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="10" r="7" fill="#ff8a5b" stroke="#ffffff" stroke-width="3"/>
+</svg>

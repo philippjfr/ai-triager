@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/app/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/cli/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/configuration/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/getting-started/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/labels/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/models/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/pr-review/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/running-agents/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/security/</loc>
+      </url>
+      <url>
+        <loc>https://philippjfr.github.io/ai-triager/workspaces/</loc>
+      </url>
+</urlset>
