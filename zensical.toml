@@ -2,6 +2,10 @@
 site_name = "ai-triager"
 site_description = "LLM-assisted triage of GitHub issues, labels and pull requests for open-source maintainers."
 site_author = "Philipp Rudiger"
+site_url = "https://philippjfr.github.io/ai-triager/"
+repo_url = "https://github.com/philippjfr/ai-triager"
+repo_name = "philippjfr/ai-triager"
+edit_uri = "edit/main/docs/"
 docs_dir = "docs"
 nav = [
   { "Home" = "index.md" },
